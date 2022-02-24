@@ -1,0 +1,35 @@
+body{
+    background-color: #C1F4C5;
+}
+h1{
+    font-family: 'Open Sans';
+}
+h1.thick{
+    font-family: 'Alfa Slab One';
+    font-weight: bold;
+    font-size: 50px;
+}
+h1.highlight{
+    color: green;
+    font-family: monospace, "Lucida Console", "Courier New";
+}
+.center {
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+    text-align: center;
+  }
+
+img{  
+    width: 400px;
+}
+.wrap {
+    
+    display: flex;
+    justify-content: center;
+    width: 80%;  
+}
+
+.left, .right {
+    padding: 2%; 
+}
