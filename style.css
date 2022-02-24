@@ -1,9 +1,11 @@
 body{
-    background-color: #C1F4C5;
+    background-color: #e9f5db;
+    
 }
 h1{
     font-family: 'Open Sans';
 }
+
 h1.thick{
     font-family: 'Alfa Slab One';
     font-weight: bold;
@@ -20,8 +22,15 @@ h1.highlight{
     text-align: center;
   }
 
+
 img{  
     width: 400px;
+    border-radius:6%;
+}
+img.stack{
+    width:  200px;
+    height: 150px;
+    margin-top: 30px;
 }
 .wrap {
     
@@ -33,3 +42,17 @@ img{
 .left, .right {
     padding: 2%; 
 }
+
+.circle {
+    height: 200px;
+    width: 200px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 15px;
+    transition: transform .2s; /* Animation */
+  }
+  
+  .circle:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
