@@ -14,11 +14,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Portfolio Yarn?</title>
 </head>
 <body>
-    <header class="header">
+
+    <div id="spinner-container">
+        <div class="spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+    <header class="header animate__animated animate__fadeInDown animate__delay-2s">
         <img class="logo" src="img/logo.png" alt="logo">
         <div class="nav">
            <a href="#">About</a>
@@ -31,14 +48,39 @@
     </header>
 
     <div class="hero">
-        <div class="intro">
+        <div class="intro animate__fadeInLeftBig animate__animated animate__delay-2s animate__slow">
             <p class="desc">Maayong Adlaw! <br>
-            I am <span class="focus">Jose Angelo Ogatia</span><br>
-            an aspiring Web Developer. </p>
+            I am <span class="focus">Jose Angelo Ogatia</span> an aspiring Web Developer </p>
 
-            <a href="#"><img class="github" src="img/github.png" alt=""></a>
+            <a href="#"><img class="github " src="img/github.png" alt=""></a>
         </div>
-        <img class="webimg" src="img/web.png" alt="">
+        <img class="webimg animate__animated animate__bounceInRight animate__slow animate__delay-2s" src="img/web.png" alt="">
     </div>
+    <div style="height: 200px;"></div>
+
+    <div class="section1">
+        <div class="main-container" data-aos="fade-up" data-aos-duration="1500">
+            <div class="about">
+                <div class="about-header">
+                    <h2 class="heading">About Me</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur suscipit, voluptates numquam est impedit hic reprehenderit deserunt delectus consequuntur accusantium sit doloremque veniam voluptatum quis nihil ut ipsa nulla non labore debitis fugit! Porro deleniti praesentium ut? Praesentium laborum, itaque qui odit saepe molestias unde corporis commodi? Explicabo, repellat consequatur.</p>
+
+                    <br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias deserunt, minus magnam aut optio velit repellendus molestias, asperiores quidem dolorem exercitationem. Architecto, aperiam sint rerum atque quam corrupti fugiat consequuntur expedita ipsam cupiditate, reiciendis, harum sunt molestiae. Repellendus eius quia ipsa, maxime sint ex. Dolor atque labore quod officia hic alias. Voluptatibus natus alias minus asperiores architecto dolores voluptate voluptates.</p>
+                </div>
+            </div>
+            <div class="profile">
+                <img class="mypic" src="/img/me.png" alt="me">
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 200px;"></div>
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
