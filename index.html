@@ -1,273 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jose Angelo Ogatia - Web Developer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+            color: #334155; /* Darker text */
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="antialiased leading-normal">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>jaowie Web Portfolio</title>
-        <link rel="stylesheet" href="assets/css/tailwind.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    </head>
-
-    <body class="bg-gray-100">
-        
-        <section class="py-10 md:py-16">
-
-            <div class="container max-w-screen-xl mx-auto px-4">
-
-                <nav class="flex items-center justify-between mb-40">
-                    <img style="width: 100px; border-radius: 20px;" src="assets/image/logo.jpg" alt="my logo">
-
-                    <button class="px-7 py-3 md:px-9 md:py-4 bg-white font-medium md:font-semibold text-gray-700 text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500">Get my CV</button>
-                </nav>
-
-                <div class="text-center">
-                    <div class="flex justify-center mb-16">
-                        <img style="width: 300px;"src="assets/image/home-img.png" alt="Image">
-                    </div>
-
-                    <h6 class="font-medium text-gray-600 text-lg md:text-2xl uppercase mb-8">Jose Angelo Ogatia</h6>
-
-                    <h1 class="font-normal text-gray-900 text-4xl md:text-7xl leading-none mb-8">Web Developer</h1>
-
-                    <!-- <p class="font-normal text-gray-600 text-md md:text-xl mb-16"> developer with a knack for building efficient and scalable server-side solutions.</p> -->
-
-                    <a href="#" class="px-7 py-3 md:px-9 md:py-4 font-medium md:font-semibold bg-gray-700 text-gray-50 text-sm rounded-md hover:bg-gray-50 hover:text-gray-700 transition ease-linear duration-500">Hire me</a>
-                </div>
-
+    <!-- Header/Navigation (optional, but good for larger sites) -->
+    <header class="bg-white shadow-sm py-4 px-6 md:px-12 sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600 rounded-lg p-2 hover:bg-indigo-50 transition-colors duration-200">Jose Ogatia</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50">About</a>
+                <a href="#technologies" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50">Technologies</a>
+                <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50">Experience</a>
+                <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50">Projects</a>
             </div>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
 
-        </section>
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4 px-6 absolute w-full z-40">
+        <div class="flex flex-col space-y-4">
+            <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 text-center">About</a>
+            <a href="#technologies" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 text-center">Technologies</a>
+            <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 text-center">Experience</a>
+            <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 text-center">Projects</a>
+        </div>
+    </div>
 
-        <section class="py-10 md:py-16">
-            <div class="container max-w-screen-xl mx-auto px-4">
-                <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">About Me</h1>
-                <div >
-                    <p>
-                        I am a skilled Laravel developer with experience in building scalable, efficient, and high-performance web applications. With a strong foundation in PHP and Laravel, I specialize in crafting robust back-end systems, APIs, and seamless user experiences. I also have expertise in front-end frameworks like Vue.js and Nuxt.js, making me well-versed in full-stack development. My goal is to create clean, maintainable code that aligns with best practices, and I am always looking to improve my skills and deliver solutions that meet both client and user needs.
-                        <br><br>
-                        Here are a few technologies I’ve been working with recently:
-                    </p>
-                    <br>
-                    <div style="display: flex; width: 50%; justify-content: space-between;">
-                        <img style="width: 50px;" src="assets/image/git-svgrepo-com.svg" alt="">
-                        <img style="width: 50px;" src="assets/image/laravel-svgrepo-com.svg" alt="">
-                        <img style="width: 50px;" src="assets/image/mysql-svgrepo-com.svg" alt="">
-                        <img style="width: 50px;" src="assets/image/postgresql-svgrepo-com.svg" alt="">
-                        <img style="width: 50px;" src="assets/image/html5-01-svgrepo-com.svg" alt="">
-                        <img style="width: 50px;" src="assets/image/css3-01-svgrepo-com.svg" alt="">
-                        <img style="width: 50px;" src="assets/image/javascript-svgrepo-com.svg" alt="">
-                    </div>
 
+    <!-- Hero Section -->
+    <section id="hero" class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-20 md:py-32 flex flex-col items-center justify-center min-h-screen-75 rounded-b-lg shadow-xl">
+        <div class="container mx-auto px-6 text-center">
+            <!-- Photo Field -->
+            <img src="assets/image/me.jpg" alt="Jose Angelo Ogatia's Photo" class="rounded-full w-40 h-40 mx-auto mb-8 object-cover border-4 border-white shadow-lg animate-fade-in">
+
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-down">Jose Angelo Ogatia</h1>
+            <p class="text-xl md:text-3xl font-light mb-8 animate-fade-in-up">Web Developer</p>
+            <a href="#about" class="bg-white text-indigo-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 inline-block">
+                Learn More
+            </a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-16 md:py-24 bg-white rounded-lg shadow-md mx-4 md:mx-auto max-w-6xl -mt-16 relative z-10 p-6 md:p-12">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">About Me</h2>
+            <p class="text-lg leading-relaxed text-gray-700 text-center max-w-4xl mx-auto">
+                I am a skilled Laravel developer with experience in building scalable, efficient, and high-performance web applications. With a strong foundation in PHP and Laravel, I specialize in crafting robust back-end systems, APIs, and seamless user experiences. I also have expertise in front-end frameworks like Vue.js and Nuxt.js, making me well-versed in full-stack development. My goal is to create clean, maintainable code that aligns with best practices, and I am always looking to improve my skills and deliver solutions that meet both client and user needs.
+            </p>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">Technologies</h2>
+            <p class="text-lg text-center mb-12 text-gray-700">Here are a few technologies I’ve been working with recently:</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <!-- Technology Card -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
+                    <img src="https://placehold.co/60x60/a78bfa/ffffff?text=Laravel" alt="Laravel Icon" class="mb-3">
+                    <span class="text-lg font-semibold text-gray-800">Laravel</span>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
+                    <img src="https://placehold.co/60x60/38bdf8/ffffff?text=MySQL" alt="MySQL Icon" class="mb-3">
+                    <span class="text-lg font-semibold text-gray-800">MySQL</span>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
+                    <img src="https://placehold.co/60x60/4ade80/ffffff?text=Vue" alt="Vue Icon" class="mb-3">
+                    <span class="text-lg font-semibold text-gray-800">Vue.js</span>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
+                    <img src="https://placehold.co/60x60/000000/ffffff?text=Nuxt3" alt="Nuxt3 Icon" class="mb-3">
+                    <span class="text-lg font-semibold text-gray-800">Nuxt3</span>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
+                    <img src="https://placehold.co/60x60/06b6d4/ffffff?text=Tailwind" alt="Tailwind Icon" class="mb-3">
+                    <span class="text-lg font-semibold text-gray-800">Tailwind CSS</span>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
+                    <img src="https://placehold.co/60x60/f97316/ffffff?text=Git" alt="Git Icon" class="mb-3">
+                    <span class="text-lg font-semibold text-gray-800">Git</span>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
+                    <img src="https://placehold.co/60x60/facc15/000000?text=JS" alt="JavaScript Icon" class="mb-3">
+                    <span class="text-lg font-semibold text-gray-800">JavaScript</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-  
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">Experience</h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Experience Item 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-indigo-500">
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">FULLSTACK DEVELOPER</h3>
+                    <p class="text-indigo-600 font-medium mb-1">Company: City Information Technology Center</p>
+                    <p class="text-gray-600 mb-3">July 2024 - May 2025</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Laravel Restful APIs.</li>
+                        <li>Front-end Integration using NUXT JS</li>
+                        <li>CI/CD</li>
+                        <li>GIT Actions, Tailwind, MySQL</li>
+                    </ul>
+                </div>
+                <!-- Experience Item 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-purple-500">
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Intern Junior Back-End Developer</h3>
+                    <p class="text-purple-600 font-medium mb-1">Company: Infosoft</p>
+                    <p class="text-gray-600 mb-3">March - May 2024</p>
+                    <!-- Add more details if available -->
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="py-10 md:py-16">
-
-            <div class="container max-w-screen-xl mx-auto px-4">
-                <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Major Projects</h1>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                    
-                <a href="https://github.com/jaowie/VRIS.git" target="_blank" class="block">
-                    <div class="bg-gray-50 px-8 py-10 rounded-md">
-                        <div style="width: 250px" class="w-20 py-6 flex justify-center rounded-md mb-4">
-                            <img style="width: 600px" src="assets/image/vris.png" alt="Image">
-                        </div>
-
-                        <h4 class="font-medium text-gray-700 text-lg mb-4">Vices Regulation Information System</h4>
-
-                        <p class="font-normal text-gray-500 text-md">Project that I have developed as a fullstack developer in City Information Technology Center.</p>
+    <!-- Major Projects Section -->
+    <section id="projects" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">Major Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Project Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 hover:shadow-lg">
+                    <img src="assets/image/vris.png"Vices Regulation Information System Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Vices Regulation Information System</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Project that I have developed as a fullstack developer in City Information Technology Center.
+                        </p>
                     </div>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center rounded-t-lg">
+        <div class="container mx-auto px-6">
+            <p>&copy; <span id="current-year"></span> Jose Angelo Ogatia. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <!-- Placeholder for social media icons -->
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.872v-6.98h-2.54V12h2.54V9.797c0-2.502 1.492-3.886 3.776-3.886 1.094 0 2.24.195 2.24.195v2.45h-1.26c-1.247 0-1.637.77-1.637 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"></path></svg>
                 </a>
-
-
-                </div>
-
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.46 0-9.92 4.46-9.92 9.92 0 4.402 2.852 8.163 6.828 9.48.5.09.682-.217.682-.483v-1.745c-2.775.602-3.36-1.334-3.36-1.334-.452-1.147-1.107-1.455-1.107-1.455-.907-.62.068-.608.068-.608 1.004.07 1.532 1.03 1.532 1.03.89 1.53 2.336 1.086 2.906.83.09-.64.35-1.086.638-1.334-2.22-.25-4.555-1.11-4.555-4.943 0-1.09.39-1.986 1.03-2.685-.102-.253-.448-1.27.098-2.656 0 0 .84-.268 2.75 1.026.798-.222 1.65-.333 2.5-.337 1.25.004 2.102.115 2.9.337 1.91-1.294 2.75-1.026 2.75-1.026.548 1.386.202 2.403.098 2.656.64.698 1.03 1.595 1.03 2.685 0 3.84-2.338 4.69-4.562 4.935.358.308.682.917.682 1.854v2.74c0 .268.18.577.688.48 3.978-1.317 6.828-5.078 6.828-9.48C21.96 6.5 17.5 2.04 12 2.04z"></path></svg>
+                </a>
             </div>
+        </div>
+    </footer>
 
-        </section>
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        <section class="py-10 md:py-16">
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-            <div class="container max-w-screen-xl mx-auto px-4">
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-                <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Experience</h1>
-
-                <!-- <div class="flex flex-col lg:flex-row justify-between">
-                    <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
-                        <h6 class="font-medium text-gray-400 text-base uppercase">Company</h6>
-
-                        <p class="font-semibold text-gray-600 text-base">Infosoft</p>
-                        <p class="font-semibold text-gray-600 text-base">Infosoft</p>
-                        
-                    </div>
-
-                    <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
-                        <h6 class="font-medium text-gray-400 text-base uppercase">Position</h6>
-
-                        <p class="font-normal text-gray-400 text-base"><span style="font-weight: bolder;">Junior Back-End Developer </span>
-                            <br>Create Laravel API routes.
-                            <br>Create Laravel Test Cases. 
-                            <br>Manage Database (create seeders and migrations)
-                            <br>Developed PDF generators primarily using laravel blade, JS, CSS & snappy PDF</p>
-
-                            <p class="font-normal text-gray-400 text-base"><span style="font-weight: bolder;">Junior Back-End Developer </span>
-                                <br>Create Laravel API routes.
-                                <br>Create Laravel Test Cases. 
-                                <br>Manage Database (create seeders and migrations)
-                                <br>Developed PDF generators primarily using laravel blade, JS, CSS & snappy PDF</p>
-                    </div>
-
-                    <div class="space-y-8 md:space-y-16">
-                        <h6 class="font-medium text-gray-400 text-base uppercase">Date</h6>
-
-                        <p class="font-normal text-gray-400 text-base">2024</p>
-                    </div>
-                </div> -->
-
-                <div class="overflow-x-auto">
-                    <table class="min-w-full table-auto">
-                        <thead>
-                            <tr class="bg-gray-100">
-                                <th class="px-4 py-2 text-left">Company</th>
-                                <th class="px-4 py-2 text-left">Experience</th>
-                                <th class="px-4 py-2 text-left">Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="px-4 py-2 align-top">City Information Technology Center</td>
-                                <td class="px-4 py-2 align-top">
-                                    <p class="font-normal"><span style="font-weight: bolder;">FULLSTACK DEVELOPER </span><br>
-                                        <br>Laravel Restful APIs.
-                                        <br>Front-end Integration using NUXT JS 
-                                        <br>CI/CD
-                                        <br>GIT Actions, Tailwind, MySQL
-                                    </p>
-                                </td>
-                                <td class="px-4 py-2 align-top">July 2024 - May 2025</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-2 align-top">Infosoft</td>
-                                <td class="px-4 py-2 align-top">
-                                    <p class="font-normal"><span style="font-weight: bolder;">Intern Junior Back-End Developer </span>
-                                    </p>
-                                </td>
-                                <td class="px-4 py-2 align-top">March - May 2024</td>
-                            </tr>
-                            <!-- Add more rows as needed -->
-                        </tbody>
-                        
-                    </table>
-                </div>
-                
-                
-            </div>
-
-        </section>
-
-        <section class="py-10 md:py-16">
-
-            <div class="container max-w-screen-xl mx-auto px-4">
-                <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Certifications/Badges</h1>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-50 px-8 py-10 rounded-md">
-                        <div class="w-20 py-6 flex justify-center rounded-md mb-4">
-                                <img src="assets/image/its.png" alt="Image">
-                        </div>
-
-                        <h4 class="font-medium text-gray-700 text-lg mb-4">Information Technology Specialist: Database</h4>
-                    </div>
-                    
-                    <div class="bg-gray-50 px-8 py-10 rounded-md">
-                        <div class="w-20 py-6 flex justify-center rounded-md mb-4">
-                            <img src="assets/image/topcit.png" alt="Image">
-                        </div>
-
-                        <h4 class="font-medium text-gray-700 text-lg mb-4">TOPCIT PH</h4>
-                    </div>
-
-                    <div class="bg-gray-50 px-8 py-10 rounded-md">
-                        <div class="w-20 py-6 flex justify-center rounded-md mb-4">
-                            <img src="assets/image/mta.png" alt="Image">
-                        </div>
-
-                        <h4 class="font-medium text-gray-700 text-lg mb-4">MTA: Introduciton to programming using Java.</h4>
-                    </div>
-
-                    <div class="bg-gray-50 px-8 py-10 rounded-md">
-                        <div class="w-20 py-6 flex justify-center rounded-md mb-4">
-                            <img src="assets/image/hackerrank1.png" alt="Image">
-                        </div>
-
-                        <h4 class="font-medium text-gray-700 text-lg mb-4">HackerRank Java Programming: Bronze</h4>
-                    </div>
-                    
-                    <div class="bg-gray-50 px-8 py-10 rounded-md">
-                        <div class="w-20 py-6 flex justify-center bg-gray-100 rounded-md mb-4">
-                            <img src="assets/image/hackerrank2.png" alt="Image">
-                        </div>
-
-                        <h4 class="font-medium text-gray-700 text-lg mb-4">HackerRank SQL: Bronze</h4>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <footer class="py-10 md:py-16 mb-20 md:mb-40 lg::mb-52">
-
-            <div class="container max-w-screen-xl mx-auto px-4">
-
-                <div class="text-center">
-
-                    <div class="flex items-center justify-center space-x-8">
-                        <a href="#" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
-                            <i data-feather="twitter" class="text-gray-500 hover:text-gray-800 transition ease-in-out duration-500"></i>
-                        </a>
-    
-                        <a href="#" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
-                            <i data-feather="dribbble" class="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"></i>
-                        </a>
-    
-                        <a href="#" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
-                            <i data-feather="facebook" class="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"></i>
-                        </a>
-    
-                        <a href="#" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
-                            <i data-feather="codepen" class="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"></i>
-                        </a>
-    
-                        <a href="#" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
-                            <i data-feather="at-sign" class="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"></i>
-                        </a>
-    
-                        <a href="#" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
-                            <i data-feather="instagram" class="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-        </footer>
-
-
-        <script>
-            feather.replace()
-        </script>
-
-    </body>
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
 </html>
