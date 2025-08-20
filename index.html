@@ -6,14 +6,18 @@
     <title>Jose Angelo Ogatia - Web Developer Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Light gray background */
-            color: #334155; /* Darker text */
+            background-color: #f8fafc;
+            color: #334155;
+            scroll-behavior: smooth;
         }
-        /* Custom scrollbar for a cleaner look */
+        
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -21,29 +25,85 @@
             background: #f1f5f9;
         }
         ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
+            background: #6366f1;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
+            background: #4f46e5;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .animate-delay-1 {
+            animation-delay: 0.3s;
+        }
+        
+        .animate-delay-2 {
+            animation-delay: 0.6s;
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Card hover effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Section background pattern */
+        .pattern-dots {
+            background-image: radial-gradient(#6366f1 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.05;
         }
     </style>
 </head>
 <body class="antialiased leading-normal">
 
-    <!-- Header/Navigation (optional, but good for larger sites) -->
-    <header class="bg-white shadow-sm py-4 px-6 md:px-12 sticky top-0 z-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white/90 backdrop-blur-sm py-4 px-6 md:px-12 sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto flex justify-between items-center">
+<<<<<<< Updated upstream
             <a href="#" class="text-2xl font-bold text-indigo-600 rounded-lg p-2 hover:bg-indigo-50 transition-colors duration-200">JAO</a>
             <div class="hidden md:flex space-x-6">
                 <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50">About</a>
                 <a href="#technologies" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50">Technologies</a>
                 <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50">Experience</a>
                 <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50">Projects</a>
+=======
+            <a href="#" class="text-2xl font-bold text-indigo-600 rounded-lg p-2 hover:bg-indigo-50 transition-all duration-300 flex items-center">
+                <span class="bg-indigo-600 text-white p-1 rounded mr-2 p-5">J</span>
+                <span class="hidden sm:inline">Jose Angelo</span>
+            </a>
+            <div class="hidden md:flex space-x-2">
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 font-medium">About</a>
+                <a href="#technologies" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 font-medium">Skills</a>
+                <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 font-medium">Experience</a>
+                <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 font-medium">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 font-medium">Contact</a>
+>>>>>>> Stashed changes
             </div>
-            <!-- Mobile Menu Button (Hamburger) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none p-2 rounded-lg hover:bg-indigo-50">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
@@ -51,74 +111,147 @@
     </header>
 
     <!-- Mobile Menu Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4 px-6 absolute w-full z-40">
-        <div class="flex flex-col space-y-4">
-            <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 text-center">About</a>
-            <a href="#technologies" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 text-center">Technologies</a>
-            <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 text-center">Experience</a>
-            <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-2 rounded-lg hover:bg-indigo-50 text-center">Projects</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm shadow-lg py-4 px-6 absolute w-full z-40">
+        <div class="flex flex-col space-y-2">
+            <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-3 rounded-lg hover:bg-indigo-50 font-medium">About</a>
+            <a href="#technologies" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-3 rounded-lg hover:bg-indigo-50 font-medium">Skills</a>
+            <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-3 rounded-lg hover:bg-indigo-50 font-medium">Experience</a>
+            <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-3 rounded-lg hover:bg-indigo-50 font-medium">Projects</a>
+            <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition-colors duration-200 p-3 rounded-lg hover:bg-indigo-50 font-medium">Contact</a>
         </div>
     </div>
 
-
     <!-- Hero Section -->
-    <section id="hero" class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-20 md:py-32 flex flex-col items-center justify-center min-h-screen-75 rounded-b-lg shadow-xl">
-        <div class="container mx-auto px-6 text-center">
-            <!-- Photo Field -->
-            <img src="assets/image/me.jpg" alt="Jose Angelo Ogatia's Photo" class="rounded-full w-40 h-40 mx-auto mb-8 object-cover border-4 border-white shadow-lg animate-fade-in">
+<section id="hero" 
+    class="relative bg-[url('assets/image/bg-code.png')] bg-cover bg-center text-white py-20 md:py-32 flex flex-col items-center justify-center min-h-screen rounded-b-[40px] shadow-xl overflow-hidden">
+    
+    <div class="pattern-dots absolute inset-0"></div>
+    <div class="container mx-auto px-6 text-center relative z-10">
+        <!-- Photo Field -->
+        <div class="relative inline-block mb-8">
+            <img src="assets/image/me.jpg" alt="Jose Angelo Ogatia's Photo" class="rounded-full w-40 h-40 mx-auto object-cover border-4 border-white shadow-2xl animate-fade-in">
+            <div class="absolute -bottom-2 -right-2 bg-indigo-500 rounded-full w-12 h-12 flex items-center justify-center border-2 border-white">
+                <span class="text-white text-xl">👋</span>
+            </div>
+        </div>
 
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-down">Jose Angelo Ogatia</h1>
-            <p class="text-xl md:text-3xl font-light mb-8 animate-fade-in-up">Web Developer</p>
-            <a href="#about" class="bg-white text-indigo-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 inline-block">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in">Jose Angelo Ogatia</h1>
+        <div class="inline-block mb-6">
+            <span class="text-xl md:text-3xl font-light bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full border border-white/20 animate-fade-in animate-delay-1 inline-block">
+                Web Developer
+            </span>
+        </div>
+        <div class="mt-10 animate-fade-in animate-delay-2">
+            <a href="#about" class="bg-white text-indigo-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 inline-block mr-4">
                 Learn More
             </a>
+            <a href="#projects" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 inline-block">
+                View Projects
+            </a>
         </div>
-    </section>
+    </div>
+    <div class="absolute bottom-0 left-0 w-full flex justify-center py-6">
+        <a href="#about" class="animate-bounce">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </a>
+    </div>
+</section>
+
 
     <!-- About Me Section -->
-    <section id="about" class="py-16 md:py-24 bg-white rounded-lg shadow-md mx-4 md:mx-auto max-w-6xl -mt-16 relative z-10 p-6 md:p-12">
+    <section id="about" class="py-16 md:py-24 bg-white rounded-3xl shadow-lg mx-4 md:mx-auto max-w-6xl -mt-16 relative z-10 p-6 md:p-12">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">About Me</h2>
-            <p class="text-lg leading-relaxed text-gray-700 text-center max-w-4xl mx-auto">
-                I am a skilled Laravel developer with experience in building scalable, efficient, and high-performance web applications. With a strong foundation in PHP and Laravel, I specialize in crafting robust back-end systems, APIs, and seamless user experiences. I also have expertise in front-end frameworks like Vue.js and Nuxt.js, making me well-versed in full-stack development. My goal is to create clean, maintainable code that aligns with best practices, and I am always looking to improve my skills and deliver solutions that meet both client and user needs.
-            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+                <span class="gradient-text">About Me</span>
+            </h2>
+            <div class="flex flex-col md:flex-row items-center gap-10 max-w-5xl mx-auto">
+                <div class="md:w-2/3">
+                    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                        I am a skilled Laravel developer with experience in building scalable, efficient, and high-performance web applications. With a strong foundation in PHP and Laravel, I specialize in crafting robust back-end systems, APIs, and seamless user experiences.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                        I also have expertise in front-end frameworks like Vue.js and Nuxt.js, making me well-versed in full-stack development. My goal is to create clean, maintainable code that aligns with best practices.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        I am always looking to improve my skills and deliver solutions that meet both client and user needs.
+                    </p>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-6 rounded-2xl shadow-md w-full max-w-xs">
+                        <h3 class="text-xl font-semibold text-indigo-800 mb-4 text-center">Quick Facts</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <div class="bg-indigo-100 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-code text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Full Stack Developer</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-indigo-100 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-map-marker-alt text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Philippines</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-indigo-100 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-graduation-cap text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Information Technology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Technologies Section -->
-    <section id="technologies" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">Technologies</h2>
-            <p class="text-lg text-center mb-12 text-gray-700">Here are a few technologies I’ve been working with recently:</p>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+    <section id="technologies" class="py-16 md:py-24 bg-gray-50 relative">
+        <div class="pattern-dots absolute inset-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">
+                <span class="gradient-text">Technical Skills</span>
+            </h2>
+            <p class="text-lg text-center mb-12 text-gray-700 max-w-2xl mx-auto">Here are the technologies and tools I use to bring ideas to life:</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
                 <!-- Technology Card -->
-                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
-                    <img src="https://placehold.co/60x60/a78bfa/ffffff?text=Laravel" alt="Laravel Icon" class="mb-3">
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center flex-col card-hover">
+                    <div class="bg-indigo-100 p-3 rounded-xl mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel Icon" class="w-10 h-10">
+                    </div>
                     <span class="text-lg font-semibold text-gray-800">Laravel</span>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
-                    <img src="https://placehold.co/60x60/38bdf8/ffffff?text=MySQL" alt="MySQL Icon" class="mb-3">
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center flex-col card-hover">
+                    <div class="bg-blue-100 p-3 rounded-xl mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL Icon" class="w-10 h-10">
+                    </div>
                     <span class="text-lg font-semibold text-gray-800">MySQL</span>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
-                    <img src="https://placehold.co/60x60/4ade80/ffffff?text=Vue" alt="Vue Icon" class="mb-3">
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center flex-col card-hover">
+                    <div class="bg-green-100 p-3 rounded-xl mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue Icon" class="w-10 h-10">
+                    </div>
                     <span class="text-lg font-semibold text-gray-800">Vue.js</span>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
-                    <img src="https://placehold.co/60x60/000000/ffffff?text=Nuxt3" alt="Nuxt3 Icon" class="mb-3">
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center flex-col card-hover">
+                    <div class="bg-gray-100 p-3 rounded-xl mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg" alt="Nuxt3 Icon" class="w-10 h-10">
+                    </div>
                     <span class="text-lg font-semibold text-gray-800">Nuxt3</span>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
-                    <img src="https://placehold.co/60x60/06b6d4/ffffff?text=Tailwind" alt="Tailwind Icon" class="mb-3">
-                    <span class="text-lg font-semibold text-gray-800">Tailwind CSS</span>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center flex-col card-hover">
+                    <div class="bg-cyan-100 p-3 rounded-xl mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind Icon" class="w-10 h-10">
+                    </div>
+                    <span class="text-lg font-semibold text-gray-800">Tailwind</span>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
-                    <img src="https://placehold.co/60x60/f97316/ffffff?text=Git" alt="Git Icon" class="mb-3">
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center flex-col card-hover">
+                    <div class="bg-orange-100 p-3 rounded-xl mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Icon" class="w-10 h-10">
+                    </div>
                     <span class="text-lg font-semibold text-gray-800">Git</span>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center flex-col transform transition-transform hover:scale-105 hover:shadow-lg">
-                    <img src="https://placehold.co/60x60/facc15/000000?text=JS" alt="JavaScript Icon" class="mb-3">
-                    <span class="text-lg font-semibold text-gray-800">JavaScript</span>
                 </div>
             </div>
         </div>
@@ -127,9 +260,15 @@
     <!-- Experience Section -->
     <section id="experience" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">Experience</h2>
-            <div class="max-w-4xl mx-auto space-y-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+                <span class="gradient-text">Work Experience</span>
+            </h2>
+            <div class="max-w-4xl mx-auto space-y-12 relative">
+                <!-- Timeline line -->
+                <div class="absolute left-7 md:left-1/2 top-0 bottom-0 w-1 bg-indigo-100 transform -translate-x-1/2 hidden md:block"></div>
+                
                 <!-- Experience Item 1 -->
+<<<<<<< Updated upstream
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-indigo-500">
                     <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">FULLSTACK DEVELOPER</h3>
                     <p class="text-indigo-600 font-medium mb-1">Company: City Information Technology Center</p>
@@ -140,64 +279,166 @@
                         <li>CI/CD</li>
                         <li>GIT Actions, Tailwind, MySQL</li>
                     </ul>
+=======
+                <div class="relative flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/2 md:pr-10 md:text-right order-2 md:order-1">
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md border-l-4 md:border-l-0 md:border-r-4 border-indigo-500">
+                            <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">FULLSTACK DEVELOPER</h3>
+                            <p class="text-indigo-600 font-medium mb-1">City Information Technology Center</p>
+                            <p class="text-gray-600 mb-3">July 2024 - August 2025</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                <li>Laravel Restful APIs</li>
+                                <li>Front-end Integration using NUXT JS</li>
+                                <li>CI/CD Implementation</li>
+                                <li>GIT Actions, Tailwind, MySQL</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex md:justify-center items-start order-1 md:order-2">
+                        <div class="w-14 h-14 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg z-10">
+                            <i class="fas fa-laptop-code text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 order-3"></div>
+>>>>>>> Stashed changes
                 </div>
+                
                 <!-- Experience Item 2 -->
+<<<<<<< Updated upstream
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-purple-500">
                     <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Junior Back-End Developer</h3>
                     <p class="text-purple-600 font-medium mb-1">Company: Infosoft</p>
                     <p class="text-gray-600 mb-3">March - May 2024</p>
                     <!-- Add more details if available -->
+=======
+                <div class="relative flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/2 order-2"></div>
+                    <div class="flex md:justify-center items-start order-1">
+                        <div class="w-14 h-14 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg z-10">
+                            <i class="fas fa-server text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-10 order-3">
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md border-l-4 border-purple-500">
+                            <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Junior Back-End Developer</h3>
+                            <p class="text-purple-600 font-medium mb-1">Infosoft</p>
+                            <p class="text-gray-600 mb-3">March - May 2024</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                <li>Backend API Development</li>
+                                <li>Database Management</li>
+                                <li>Code Review & Collaboration</li>
+                            </ul>
+                        </div>
+                    </div>
+>>>>>>> Stashed changes
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Major Projects Section -->
-    <section id="projects" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">Major Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+    <section id="projects" class="py-16 md:py-24 bg-gray-50 relative">
+        <div class="pattern-dots absolute inset-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">
+                <span class="gradient-text">Featured Projects</span>
+            </h2>
+            <p class="text-lg text-center mb-12 text-gray-700 max-w-2xl mx-auto">Check out some of my recent work that I'm proud of</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <!-- Project Card 1 -->
-                 <a href="https://github.com/jaowie/VRIS.git">
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 hover:shadow-lg">
-                        <img src="assets/image/vris.png"Vices Regulation Information System Screenshot" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Vices Regulation Information System</h3>
-                            <!-- <p class="text-gray-700 leading-relaxed"> -->
-                                <!-- Project that I have developed as a fullstack developer in City Information Technology Center.
-                            </p> -->
+                <a href="https://github.com/jaowie/VRIS.git" class="block group">
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/image/vris.png" alt="Vices Regulation Information System Screenshot" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-indigo-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                         </div>
-                    </div>
-                 </a>
-  
-                <a href="https://github.com/jaowie/class-filament.git">
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 hover:shadow-lg">
-                        <img src="assets/image/class.png" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Centralized Livestock and Slaughterhouse System</h3>
-                            <!-- <p class="text-gray-700 leading-relaxed">
-                                Project that I have developed as a fullstack developer in City Information Technology Center.
-                            </p> -->
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Vices Regulation Information System</h3>
+                                <span class="bg-indigo-100 text-indigo-600 text-xs font-medium px-2.5 py-0.5 rounded">Laravel + Nuxt</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                A comprehensive system developed for regulating vices-related activities with efficient data management and reporting capabilities.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="mr-3"><i class="fas fa-code-branch mr-1"></i> GitHub</span>
+                            </div>
                         </div>
                     </div>
                 </a>
- 
+                
+                <!-- Project Card 2 -->
+                <a href="https://github.com/jaowie/class-filament.git" class="block group">
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/image/class.png" alt="Centralized Livestock System Screenshot" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-indigo-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Centralized Livestock System</h3>
+                                <span class="bg-purple-100 text-purple-600 text-xs font-medium px-2.5 py-0.5 rounded">Laravel + Filament</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                A complete livestock and slaughterhouse management system with tracking, inventory, and reporting features for agricultural operations.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="mr-3"><i class="fas fa-code-branch mr-1"></i> GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+                <span class="gradient-text">Get In Touch</span>
+            </h2>
+            <div class="max-w-4xl mx-auto bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl shadow-md p-8 md:p-12">
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Let's work together!</h3>
+                        <p class="text-gray-700 mb-6">
+                            I'm currently available for full-time or freelance work. If you have a project that you want to get started or think you need my help with something, then get in touch.
+                        </p>
+                        <div class="space-y-4 flex">
+                            <div class="flex items-center mr-5">
+                                <div class="bg-white p-3 rounded-lg shadow-sm mr-4">
+                                    <i class="fas fa-envelope text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Email</p>
+                                    <p class="text-gray-800">ajogatia10@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 text-center rounded-t-lg">
+    <footer class="bg-gray-800 text-white py-12 rounded-t-3xl">
         <div class="container mx-auto px-6">
-            <p>&copy; <span id="current-year"></span> Jose Angelo Ogatia. All rights reserved.</p>
-            <div class="flex justify-center space-x-4 mt-4">
-                <!-- Placeholder for social media icons -->
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.872v-6.98h-2.54V12h2.54V9.797c0-2.502 1.492-3.886 3.776-3.886 1.094 0 2.24.195 2.24.195v2.45h-1.26c-1.247 0-1.637.77-1.637 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"></path></svg>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.46 0-9.92 4.46-9.92 9.92 0 4.402 2.852 8.163 6.828 9.48.5.09.682-.217.682-.483v-1.745c-2.775.602-3.36-1.334-3.36-1.334-.452-1.147-1.107-1.455-1.107-1.455-.907-.62.068-.608.068-.608 1.004.07 1.532 1.03 1.532 1.03.89 1.53 2.336 1.086 2.906.83.09-.64.35-1.086.638-1.334-2.22-.25-4.555-1.11-4.555-4.943 0-1.09.39-1.986 1.03-2.685-.102-.253-.448-1.27.098-2.656 0 0 .84-.268 2.75 1.026.798-.222 1.65-.333 2.5-.337 1.25.004 2.102.115 2.9.337 1.91-1.294 2.75-1.026 2.75-1.026.548 1.386.202 2.403.098 2.656.64.698 1.03 1.595 1.03 2.685 0 3.84-2.338 4.69-4.562 4.935.358.308.682.917.682 1.854v2.74c0 .268.18.577.688.48 3.978-1.317 6.828-5.078 6.828-9.48C21.96 6.5 17.5 2.04 12 2.04z"></path></svg>
-                </a>
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white rounded-lg p-2 hover:bg-white/10 transition-colors duration-200 inline-flex items-center">
+                        <span class="bg-indigo-600 text-white p-1 rounded mr-2">J</span>
+                        Jose Angelo Ogatia
+                    </a>
+                    <p class="text-gray-400 mt-2">Web Developer & Laravel Specialist</p>
+                </div>
+    
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="current-year"></span> Jose Angelo Ogatia. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -219,6 +460,26 @@
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
+        });
+
+        // Add animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
         });
     </script>
 </body>
