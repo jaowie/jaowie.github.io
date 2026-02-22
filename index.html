@@ -1,453 +1,718 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jose Angelo Ogatia — Creative Developer</title>
-    <meta name="description"
-        content="Portfolio of Jose Angelo Ogatia, a Full Stack Developer specializing in Laravel, Vue.js, and modern web experiences.">
+    <meta
+      name="description"
+      content="Portfolio of Jose Angelo Ogatia, a Full Stack Developer specializing in Laravel, Vue.js, and modern web experiences."
+    />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;500;700;900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        void: '#050505',
-                        surface: '#121212',
-                        accent: '#CCFF00', // Electric Lime
-                        'accent-dim': '#a3cc00',
-                        text: '#FAFAFA',
-                        muted: '#A1A1AA',
-                    },
-                    backgroundImage: {
-                        'grid-pattern': "linear-gradient(to right, #202020 1px, transparent 1px), linear-gradient(to bottom, #202020 1px, transparent 1px)",
-                    },
-                    animation: {
-                        'spin-slow': 'spin 12s linear infinite',
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Outfit", "sans-serif"],
+            },
+            colors: {
+              void: "#050505",
+              surface: "#121212",
+              accent: "#f53003", // Electric Lime
+              "accent-dim": "#a3cc00",
+              text: "#FAFAFA",
+              muted: "#A1A1AA",
+            },
+            backgroundImage: {
+              "grid-pattern":
+                "linear-gradient(to right, #202020 1px, transparent 1px), linear-gradient(to bottom, #202020 1px, transparent 1px)",
+            },
+            animation: {
+              "spin-slow": "spin 12s linear infinite",
+            },
+          },
+        },
+      };
     </script>
 
     <style>
-        body {
-            background-color: #050505;
-            color: #FAFAFA;
-            overflow-x: hidden;
-        }
+      body {
+        background-color: #050505;
+        color: #fafafa;
+        overflow-x: hidden;
+      }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
 
-        ::-webkit-scrollbar-track {
-            background: #050505;
-        }
+      ::-webkit-scrollbar-track {
+        background: #050505;
+      }
 
-        ::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 3px;
-        }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 3px;
+      }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #CCFF00;
-        }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ccff00;
+      }
 
-        /* Utilities */
-        .text-stroke {
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
-            color: transparent;
-        }
+      /* Utilities */
+      .text-stroke {
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+        color: transparent;
+      }
 
-        .glass-card {
-            background: rgba(18, 18, 18, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+      .glass-card {
+        background: rgba(18, 18, 18, 0.6);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
 
-        .magnetic-btn {
-            transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
+      .magnetic-btn {
+        transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
 
-        .blob {
-            filter: blur(80px);
-            opacity: 0.4;
-            mix-blend-mode: screen;
-        }
+      .blob {
+        filter: blur(80px);
+        opacity: 0.4;
+        mix-blend-mode: screen;
+      }
+
+      /* Modal Custom Styles */
+      #project-modal {
+        display: none;
+        opacity: 0;
+      }
+
+      #project-modal.active {
+        display: flex;
+      }
     </style>
-</head>
+  </head>
 
-<body class="antialiased selection:bg-accent selection:text-void">
-
+  <body class="antialiased selection:bg-accent selection:text-void">
     <!-- Background Elements -->
     <div class="fixed inset-0 pointer-events-none z-0">
-        <div class="absolute inset-0 bg-grid-pattern bg-[size:4rem_4rem] opacity-[0.03]"></div>
-        <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-accent/20 rounded-full blob animate-pulse">
-        </div>
-        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blob"></div>
+      <div
+        class="absolute inset-0 bg-grid-pattern bg-[size:4rem_4rem] opacity-[0.03]"
+      ></div>
+      <div
+        class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-accent/20 rounded-full blob animate-pulse"
+      ></div>
+      <div
+        class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blob"
+      ></div>
     </div>
 
     <!-- Navigation -->
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-md">
-        <div class="glass-card rounded-full px-6 py-3 flex justify-between items-center shadow-2xl shadow-accent/5">
-            <a href="#" class="font-heading font-bold text-xl tracking-tighter">JAO<span
-                    class="text-accent">.</span></a>
-            <div class="flex space-x-6 text-sm font-medium text-muted">
-                <a href="#work" class="hover:text-white transition-colors">Work</a>
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-            </div>
+      <div
+        class="glass-card rounded-full px-6 py-3 flex justify-between items-center shadow-2xl shadow-accent/5"
+      >
+        <a href="#" class="font-heading font-bold text-xl tracking-tighter"
+          >JAO<span class="text-accent">.</span></a
+        >
+        <div class="flex space-x-6 text-sm font-medium text-muted">
+          <a href="#work" class="hover:text-white transition-colors">Work</a>
+          <a href="#about" class="hover:text-white transition-colors">About</a>
+          <a href="#contact" class="hover:text-white transition-colors"
+            >Contact</a
+          >
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col justify-center px-6 relative z-10 pt-20">
-        <div class="container mx-auto max-w-5xl">
-            <div class="overflow-hidden">
-                <p class="text-accent font-mono text-sm mb-4 tracking-wider hero-anim opacity-0 translate-y-4">/// FULL
-                    STACK DEVELOPER</p>
-            </div>
-
-            <h1 class="font-heading font-black text-6xl md:text-8xl lg:text-9xl leading-[0.9] mb-8 tracking-tight">
-                <div class="overflow-hidden"><span class="block hero-anim opacity-0 translate-y-full">CRAFTING</span>
-                </div>
-                <div class="overflow-hidden"><span
-                        class="block hero-anim opacity-0 translate-y-full text-stroke">DIGITAL</span></div>
-                <div class="overflow-hidden"><span class="block hero-anim opacity-0 translate-y-full">REALITY</span>
-                </div>
-            </h1>
-
-            <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 mt-8">
-                <p class="text-muted text-lg max-w-md hero-anim opacity-0 translate-y-4">
-                    I'm <span class="text-white font-medium">Jose Angelo Ogatia</span>. I build robust back-end systems
-                    and immersive front-end experiences using Laravel & Vue.js.
-                </p>
-
-                <a href="#work"
-                    class="group relative inline-flex items-center justify-center px-8 py-4 bg-accent text-void font-bold font-heading uppercase tracking-wide rounded-full overflow-hidden magnetic-btn hero-anim opacity-0 translate-y-4">
-                    <span
-                        class="relative z-10 group-hover:-translate-y-[150%] transition-transform duration-500 block">View
-                        Projects</span>
-                    <span
-                        class="absolute z-10 translate-y-[150%] group-hover:translate-y-0 transition-transform duration-500 block">Let's
-                        Go</span>
-                </a>
-            </div>
+    <section
+      class="min-h-screen flex flex-col justify-center px-6 relative z-10 pt-20"
+    >
+      <div class="container mx-auto max-w-5xl">
+        <div class="overflow-hidden">
+          <p
+            class="text-accent font-mono text-sm mb-4 tracking-wider hero-anim opacity-0 translate-y-4"
+          >
+            /// FULL STACK DEVELOPER
+          </p>
         </div>
 
-        <!-- Scroll Indicator -->
+        <h1
+          class="font-heading font-black text-6xl md:text-8xl lg:text-9xl leading-[0.9] mb-8 tracking-tight"
+        >
+          <div class="overflow-hidden">
+            <span class="block hero-anim opacity-0 translate-y-full"
+              >CRAFTING</span
+            >
+          </div>
+          <div class="overflow-hidden">
+            <span
+              class="block hero-anim opacity-0 translate-y-full text-stroke text-accent"
+              >DIGITAL</span
+            >
+          </div>
+          <div class="overflow-hidden">
+            <span class="block hero-anim opacity-0 translate-y-full"
+              >REALITY</span
+            >
+          </div>
+        </h1>
+
         <div
-            class="absolute bottom-10 left-6 md:left-10 flex items-center gap-4 text-muted text-xs font-mono hero-anim opacity-0">
-            <div class="w-12 h-[1px] bg-muted"></div>
-            SCROLL TO EXPLORE
+          class="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 mt-8"
+        >
+          <p
+            class="text-muted text-lg max-w-md hero-anim opacity-0 translate-y-4"
+          >
+            I'm <span class="text-white font-medium">Jose Angelo Ogatia</span>.
+            I turn ideas into scalable web-based systems.
+          </p>
+
+          <a
+            href="#work"
+            class="group relative inline-flex items-center justify-center px-8 py-4 bg-accent text-void font-bold font-heading uppercase tracking-wide rounded-full overflow-hidden magnetic-btn hero-anim opacity-0 translate-y-4"
+          >
+            <span
+              class="relative z-10 group-hover:-translate-y-[150%] transition-transform duration-500 block"
+              >View Projects</span
+            >
+            <span
+              class="absolute z-10 translate-y-[150%] group-hover:translate-y-0 transition-transform duration-500 block"
+              >Let's Go</span
+            >
+          </a>
         </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-10 left-6 md:left-10 flex items-center gap-4 text-muted text-xs font-mono hero-anim opacity-0"
+      >
+        <div class="w-12 h-[1px] bg-muted"></div>
+        SCROLL TO EXPLORE
+      </div>
     </section>
 
     <!-- Selected Work -->
     <section id="work" class="py-32 relative z-10">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="flex items-end justify-between mb-20">
-                <h2 class="font-heading font-bold text-4xl md:text-6xl">Selected <span class="text-accent">Work</span>
-                </h2>
-                <span class="hidden md:block text-muted font-mono text-sm">(2024 — 2025)</span>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <a href="https://github.com/jaowie/VRIS.git" target="_blank"
-                    class="group relative block project-card opacity-0 translate-y-10">
-                    <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-surface border border-white/5 relative">
-                        <div
-                            class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay">
-                        </div>
-                        <img src="assets/image/vris.png" alt="VRIS"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0">
-
-                        <!-- Floating Badge -->
-                        <div
-                            class="absolute top-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 z-20">
-                            <span class="text-xs font-mono text-accent">Laravel + Nuxt</span>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex justify-between items-start">
-                        <div>
-                            <h3 class="font-heading font-bold text-2xl mb-1 group-hover:text-accent transition-colors">
-                                Vices Regulation System</h3>
-                            <p class="text-muted text-sm">Comprehensive regulatory management platform.</p>
-                        </div>
-                        <div
-                            class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-accent group-hover:text-void transition-all duration-300">
-                            <i
-                                class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Project 2 -->
-                <a href="https://github.com/jaowie/class-filament.git" target="_blank"
-                    class="group relative block md:mt-24 project-card opacity-0 translate-y-10">
-                    <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-surface border border-white/5 relative">
-                        <div
-                            class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay">
-                        </div>
-                        <img src="assets/image/class.png" alt="Livestock System"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0">
-
-                        <div
-                            class="absolute top-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 z-20">
-                            <span class="text-xs font-mono text-accent">FilamentPHP</span>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex justify-between items-start">
-                        <div>
-                            <h3 class="font-heading font-bold text-2xl mb-1 group-hover:text-accent transition-colors">
-                                Livestock Manager</h3>
-                            <p class="text-muted text-sm">Centralized inventory and tracking system.</p>
-                        </div>
-                        <div
-                            class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-accent group-hover:text-void transition-all duration-300">
-                            <i
-                                class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="flex items-end justify-between mb-20">
+          <h2 class="font-heading font-bold text-4xl md:text-6xl">
+            Selected <span class="text-accent">Work</span>
+          </h2>
+          <span class="hidden md:block text-muted font-mono text-sm"
+            >(2024 — 2026)</span
+          >
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <div
+            onclick="openModal(this)"
+            class="group relative block project-card opacity-0 translate-y-10 cursor-pointer"
+            data-title="Vices Regulation Information System"
+            data-image="assets/image/vris.png"
+            data-tech="Laravel + Nuxt"
+            data-description="An information management system for monitoring apprehended violators of the City of Davao’s ordinances, including illegal public smoking and liquor ban violations, with features for tracking offenses and citation payments."
+          >
+            <div
+              class="aspect-[4/3] overflow-hidden rounded-2xl bg-surface border border-white/5 relative"
+            >
+              <div
+                class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"
+              ></div>
+              <img
+                src="assets/image/vris.png"
+                alt="VRIS"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+              />
+
+              <!-- Floating Badge -->
+              <div
+                class="absolute top-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 z-20"
+              >
+                <span class="text-xs font-mono text-accent"
+                  >Laravel + Nuxt</span
+                >
+              </div>
+            </div>
+            <div class="mt-6 flex justify-between items-start">
+              <div>
+                <h3
+                  class="font-heading font-bold text-2xl mb-1 group-hover:text-accent transition-colors"
+                >
+                  Vices Regulation Information System
+                </h3>
+              </div>
+              <div
+                class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-accent group-hover:text-void transition-all duration-300"
+              >
+                <i
+                  class="fas fa-eye -rotate-45 group-hover:rotate-0 transition-transform duration-300"
+                ></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            onclick="openModal(this)"
+            class="group relative block md:mt-24 project-card opacity-0 translate-y-10 cursor-pointer"
+            data-title="Centralized Livestock and Management System"
+            data-image="assets/image/class.png"
+            data-tech="FilamentPHP"
+            data-description="A centralized system for the City of Davao that streamlines and manages slaughterhouse client order of payment processing and payment transactions across multiple offices."
+          >
+            <div
+              class="aspect-[4/3] overflow-hidden rounded-2xl bg-surface border border-white/5 relative"
+            >
+              <div
+                class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"
+              ></div>
+              <img
+                src="assets/image/class.png"
+                alt="Livestock System"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+              />
+
+              <div
+                class="absolute top-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 z-20"
+              >
+                <span class="text-xs font-mono text-accent">FilamentPHP</span>
+              </div>
+            </div>
+            <div class="mt-6 flex justify-between items-start">
+              <div>
+                <h3
+                  class="font-heading font-bold text-2xl mb-1 group-hover:text-accent transition-colors"
+                >
+                  Centralized Livestock and Management System
+                </h3>
+              </div>
+              <div
+                class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-accent group-hover:text-void transition-all duration-300"
+              >
+                <i
+                  class="fas fa-eye -rotate-45 group-hover:rotate-0 transition-transform duration-300"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Tech Stack (Marquee) -->
-    <section class="py-20 border-y border-white/5 bg-surface/30 overflow-hidden">
-        <div class="flex whitespace-nowrap marquee-container">
-            <!-- Content injected via JS for infinite scroll -->
-            <div class="marquee-content flex gap-16 items-center px-8">
-                <span class="text-4xl font-heading font-bold text-white/20">LARAVEL</span>
-                <i class="devicon-laravel-plain text-4xl text-accent"></i>
-                <span class="text-4xl font-heading font-bold text-white/20">VUE.JS</span>
-                <i class="devicon-vuejs-plain text-4xl text-accent"></i>
-                <span class="text-4xl font-heading font-bold text-white/20">TAILWIND</span>
-                <i class="devicon-tailwindcss-original text-4xl text-accent"></i>
-                <span class="text-4xl font-heading font-bold text-white/20">MYSQL</span>
-                <i class="devicon-mysql-plain text-4xl text-accent"></i>
-                <span class="text-4xl font-heading font-bold text-white/20">NUXT</span>
-                <i class="devicon-nuxtjs-plain text-4xl text-accent"></i>
-                <span class="text-4xl font-heading font-bold text-white/20">GIT</span>
-                <i class="devicon-git-plain text-4xl text-accent"></i>
-            </div>
+    <section
+      class="py-20 border-y border-white/5 bg-surface/30 overflow-hidden"
+    >
+      <div class="flex whitespace-nowrap marquee-container">
+        <!-- Content injected via JS for infinite scroll -->
+        <div class="marquee-content flex gap-16 items-center px-8">
+          <span class="text-4xl font-heading font-bold text-white/20"
+            >LARAVEL</span
+          >
+          <i class="devicon-laravel-plain text-4xl text-accent"></i>
+          <span class="text-4xl font-heading font-bold text-white/20"
+            >VUE.JS</span
+          >
+          <i class="devicon-vuejs-plain text-4xl text-accent"></i>
+          <span class="text-4xl font-heading font-bold text-white/20"
+            >TAILWIND</span
+          >
+          <i class="devicon-tailwindcss-original text-4xl text-accent"></i>
+          <span class="text-4xl font-heading font-bold text-white/20"
+            >MYSQL</span
+          >
+          <i class="devicon-mysql-plain text-4xl text-accent"></i>
+          <span class="text-4xl font-heading font-bold text-white/20"
+            >NUXT</span
+          >
+          <i class="devicon-nuxtjs-plain text-4xl text-accent"></i>
+          <span class="text-4xl font-heading font-bold text-white/20">GIT</span>
+          <i class="devicon-git-plain text-4xl text-accent"></i>
         </div>
+      </div>
     </section>
 
     <!-- Experience & About -->
     <section id="about" class="py-32 relative z-10">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <div class="grid md:grid-cols-2 gap-16">
-                <div>
-                    <h2 class="font-heading font-bold text-4xl mb-8">The <span class="text-accent">Journey</span></h2>
-                    <div class="space-y-12 border-l border-white/10 pl-8 relative">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="grid md:grid-cols-2 gap-16">
+          <div>
+            <h2 class="font-heading font-bold text-4xl mb-8">
+              The <span class="text-accent">Journey</span>
+            </h2>
+            <div class="space-y-12 border-l border-white/10 pl-8 relative">
+              <!-- Item 1 -->
+              <div class="relative experience-item">
+                <div
+                  class="absolute -left-[37px] top-2 w-4 h-4 rounded-full bg-void border-2 border-accent"
+                ></div>
+                <span class="text-xs font-mono text-accent mb-2 block"
+                  >2024 — PRESENT</span
+                >
+                <h3 class="text-xl font-bold text-white">
+                  Fullstack Developer
+                </h3>
+                <p class="text-muted text-sm mb-4">
+                  City Information Technology Center
+                </p>
+                <p class="text-muted/80 leading-relaxed">
+                  Designed and developed scalable information systems supporting
+                  the operations of the City of Davao
+                </p>
+              </div>
 
-                        <!-- Item 1 -->
-                        <div class="relative experience-item">
-                            <div
-                                class="absolute -left-[37px] top-2 w-4 h-4 rounded-full bg-void border-2 border-accent">
-                            </div>
-                            <span class="text-xs font-mono text-accent mb-2 block">2024 — PRESENT</span>
-                            <h3 class="text-xl font-bold text-white">Fullstack Developer</h3>
-                            <p class="text-muted text-sm mb-4">City Information Technology Center</p>
-                            <p class="text-muted/80 leading-relaxed">
-                                Spearheading city infrastructure systems using Laravel APIs and Nuxt.js front-ends.
-                                Implementing CI/CD pipelines and optimizing database performance.
-                            </p>
-                        </div>
-
-                        <!-- Item 2 -->
-                        <div class="relative experience-item">
-                            <div
-                                class="absolute -left-[37px] top-2 w-4 h-4 rounded-full bg-void border-2 border-white/20">
-                            </div>
-                            <span class="text-xs font-mono text-muted mb-2 block">2024</span>
-                            <h3 class="text-xl font-bold text-white">Junior Back-End Developer</h3>
-                            <p class="text-muted text-sm mb-4">Infosoft</p>
-                            <p class="text-muted/80 leading-relaxed">
-                                Contributed to backend architecture, database optimization, and API maintenance.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-surface/50 p-8 rounded-2xl border border-white/5">
-                    <h2 class="font-heading font-bold text-3xl mb-6">About Me</h2>
-                    <p class="text-muted leading-relaxed mb-6">
-                        I'm a developer who thrives in the intersection of <span class="text-white">logic and
-                            creativity</span>.
-                        Based in the Philippines, I specialize in building scalable web applications that don't just
-                        work perfectly but feel amazing to use.
-                    </p>
-                    <p class="text-muted leading-relaxed mb-8">
-                        When I'm not coding, I'm exploring new tech stacks, optimizing workflows, or finding the perfect
-                        coffee blend.
-                    </p>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="p-4 bg-void rounded-lg border border-white/5">
-                            <span class="block text-2xl font-bold text-white mb-1">2+</span>
-                            <span class="text-xs text-muted uppercase tracking-wider">Years Exp.</span>
-                        </div>
-                        <div class="p-4 bg-void rounded-lg border border-white/5">
-                            <span class="block text-2xl font-bold text-white mb-1">10+</span>
-                            <span class="text-xs text-muted uppercase tracking-wider">Projects</span>
-                        </div>
-                    </div>
-                </div>
+              <!-- Item 2 -->
+              <div class="relative experience-item">
+                <div
+                  class="absolute -left-[37px] top-2 w-4 h-4 rounded-full bg-void border-2 border-white/20"
+                ></div>
+                <span class="text-xs font-mono text-muted mb-2 block"
+                  >2024</span
+                >
+                <h3 class="text-xl font-bold text-white">
+                  Junior Back-End Developer
+                </h3>
+                <p class="text-muted text-sm mb-4">Infosoft</p>
+                <p class="text-muted/80 leading-relaxed">
+                  Contributed to backend architecture, database optimization,
+                  and API maintenance.
+                </p>
+              </div>
             </div>
+          </div>
+
+          <div class="bg-surface/50 p-8 rounded-2xl border border-white/5">
+            <h2 class="font-heading font-bold text-3xl mb-6">About Me</h2>
+            <p class="text-muted leading-relaxed mb-6">
+              Results-driven developer and problem solver who enjoys building
+              efficient, user-centered applications.
+            </p>
+            <p class="text-muted leading-relaxed mb-8">
+              When I'm not coding, I'm gaming or exploring new tech stacks or
+              finding the perfect coffee blend :)
+            </p>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div class="p-4 bg-void rounded-lg border border-white/5">
+                <span class="block text-2xl font-bold text-white mb-1">2+</span>
+                <span class="text-xs text-muted uppercase tracking-wider"
+                  >Years Exp.</span
+                >
+              </div>
+              <div class="p-4 bg-void rounded-lg border border-white/5">
+                <span class="block text-2xl font-bold text-white mb-1"
+                  >3</span
+                >
+                <span class="text-xs text-muted uppercase tracking-wider"
+                  >Major Projects</span
+                >
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
+
+    <!-- Project Modal -->
+    <div
+      id="project-modal"
+      class="fixed inset-0 z-[100] items-center justify-center p-4 md:p-8"
+      role="dialog"
+      aria-modal="true"
+    >
+      <!-- Backdrop -->
+      <div
+        class="absolute inset-0 bg-void/90 backdrop-blur-2xl modal-backdrop"
+        onclick="closeModal()"
+      ></div>
+
+      <!-- Modal Content -->
+      <div
+        class="relative w-full max-w-5xl bg-surface border border-white/5 rounded-3xl overflow-hidden shadow-2xl modal-content max-h-[90vh] flex flex-col"
+      >
+        <!-- Close Button -->
+        <button
+          onclick="closeModal()"
+          class="absolute top-6 right-6 z-30 w-12 h-12 rounded-full bg-void/50 border border-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-void transition-all duration-300 group"
+        >
+          <i class="fas fa-times group-hover:rotate-90 transition-transform"></i>
+        </button>
+
+        <div class="flex flex-col md:flex-row h-full">
+          <!-- Image Area -->
+          <div class="w-full md:w-3/5 bg-void/50 md:bg-void relative flex items-center justify-center overflow-hidden group p-6">
+            <img
+              id="modal-image"
+              src=""
+              alt="Project Image"
+              class="max-w-full max-h-full w-auto h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+            />
+          </div>
+
+          <!-- Content Area -->
+          <div class="w-full md:w-2/5 p-8 md:p-12 overflow-y-auto custom-scrollbar flex flex-col">
+            <div class="mb-4">
+              <span id="modal-tech" class="text-xs font-mono text-accent px-3 py-1 rounded-full border border-accent/20 bg-accent/5">
+                Tech Stack
+              </span>
+            </div>
+            
+            <h2 id="modal-title" class="font-heading font-bold text-3xl md:text-4xl mb-6 leading-tight text-white">
+              Project Title
+            </h2>
+
+            <div class="h-[1px] w-12 bg-accent mb-8"></div>
+
+            <p id="modal-description" class="text-muted leading-relaxed mb-10 text-lg">
+              Project description goes here...
+            </p>
+
+            <div class="mt-auto pt-6">
+              <a
+                id="modal-link"
+                href=""
+                target="_blank"
+                class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/5 hover:bg-accent hover:text-void border border-white/10 rounded-full transition-all duration-300 font-heading font-bold uppercase tracking-wider text-sm group w-full md:w-auto"
+              >
+                <span>View Repository</span>
+                <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer / Contact -->
     <section id="contact" class="py-32 relative overflow-hidden">
-        <div class="absolute inset-0 bg-accent/5 skew-y-3 transform origin-bottom-left scale-110"></div>
+      <div
+        class="absolute inset-0 bg-accent/5 skew-y-3 transform origin-bottom-left scale-110"
+      ></div>
 
-        <div class="container mx-auto px-6 max-w-4xl text-center relative z-10">
-            <p class="text-accent font-mono text-sm mb-6 tracking-widest">WHAT'S NEXT?</p>
-            <h2 class="font-heading font-black text-5xl md:text-7xl mb-8 leading-tight">
-                LET'S BUILD <br> SOMETHING <span class="text-stroke">EPIC</span>
-            </h2>
+      <div class="container mx-auto px-6 max-w-4xl text-center relative z-10">
+        <p class="text-accent font-mono text-sm mb-6 tracking-widest">
+          WHAT'S NEXT?
+        </p>
+        <h2
+          class="font-heading font-black text-5xl md:text-7xl mb-8 leading-tight"
+        >
+          LET'S BUILD <br />
+          SOMETHING <span class="text-stroke text-accent">EPIC</span>
+        </h2>
 
-            <a href="mailto:ajogatia10@gmail.com"
-                class="inline-block text-2xl md:text-4xl font-heading font-bold text-white hover:text-accent transition-colors border-b-2 border-white/10 hover:border-accent pb-2 mb-12">
-                ajogatia10@gmail.com
-            </a>
+        <a
+          href="mailto:ajogatia10@gmail.com"
+          class="inline-block text-2xl md:text-4xl font-heading font-bold text-white hover:text-accent transition-colors border-b-2 border-white/10 hover:border-accent pb-2 mb-12"
+        >
+          ajogatia10@gmail.com
+        </a>
 
-            <div class="flex justify-center gap-8 text-2xl text-muted">
-                <a href="https://github.com/jaowie" class="hover:text-white hover:-translate-y-1 transition-all"><i
-                        class="fab fa-github"></i></a>
-                <a href="#" class="hover:text-white hover:-translate-y-1 transition-all"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="#" class="hover:text-white hover:-translate-y-1 transition-all"><i
-                        class="fab fa-twitter"></i></a>
-            </div>
-
-            <div
-                class="mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-sm text-muted/60">
-                <p>&copy; <span id="year"></span> Jose Angelo Ogatia</p>
-                <p>Designed with <span class="text-accent">Electric Void</span></p>
-            </div>
+        <div class="flex justify-center gap-8 text-2xl text-muted">
+          <a
+            href="https://github.com/jaowie"
+            class="hover:text-white hover:-translate-y-1 transition-all"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/jose-angelo-ogatia-5413ab206/"
+            class="hover:text-white hover:-translate-y-1 transition-all"
+            ><i class="fab fa-linkedin"></i
+          ></a>
         </div>
+
+        <div
+          class="mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-sm text-muted/60"
+        >
+          <p>&copy; <span id="year"></span> Jose Angelo Ogatia</p>
+        </div>
+      </div>
     </section>
 
     <script>
-        // Update Year
-        document.getElementById('year').textContent = new Date().getFullYear();
+      // Update Year
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-        // GSAP Animations
-        gsap.registerPlugin(ScrollTrigger);
+      // GSAP Animations
+      gsap.registerPlugin(ScrollTrigger);
 
-        // Hero Animation
-        const tl = gsap.timeline();
+      // Hero Animation
+      const tl = gsap.timeline();
 
-        tl.to('.hero-anim', {
+      tl.to(".hero-anim", {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.1,
+        ease: "power4.out",
+        delay: 0.2,
+      });
+
+      // Project Cards Scroll Trigger
+      gsap.utils.toArray(".project-card").forEach((card, i) => {
+        gsap.to(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom-=100",
+            toggleActions: "play none none reverse",
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+        });
+      });
+
+      // Marquee Effect
+      const marqueeContent = document.querySelector(".marquee-content");
+      const marqueeContainer = document.querySelector(".marquee-container");
+
+      // Clone content for seamless loop
+      const clone = marqueeContent.cloneNode(true);
+      marqueeContainer.appendChild(clone);
+
+      gsap.to(".marquee-content", {
+        xPercent: -100,
+        repeat: -1,
+        duration: 20,
+        ease: "linear",
+      });
+
+      // Experience Items
+      gsap.utils.toArray(".experience-item").forEach((item, i) => {
+        gsap.from(item, {
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom-=50",
+          },
+          x: -20,
+          opacity: 0,
+          duration: 0.6,
+          delay: i * 0.1,
+        });
+      });
+
+      // Magnetic Buttons
+      const buttons = document.querySelectorAll(".magnetic-btn");
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("mousemove", (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+
+          gsap.to(btn, {
+            x: x * 0.3,
+            y: y * 0.3,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+
+        btn.addEventListener("mouseleave", () => {
+          gsap.to(btn, {
+            x: 0,
             y: 0,
-            opacity: 1,
-            duration: 1,
-            stagger: 0.1,
-            ease: "power4.out",
-            delay: 0.2
+            duration: 0.5,
+            ease: "elastic.out(1, 0.3)",
+          });
+        });
+      });
+      // Project Modal Functions
+      function openModal(card) {
+        const modal = document.getElementById("project-modal");
+        const title = card.getAttribute("data-title");
+        const image = card.getAttribute("data-image");
+        const tech = card.getAttribute("data-tech");
+        const description = card.getAttribute("data-description");
+        const link = card.getAttribute("data-link");
+
+        // Populate Content
+        document.getElementById("modal-image").src = image;
+        document.getElementById("modal-title").textContent = title;
+        document.getElementById("modal-tech").textContent = tech;
+        document.getElementById("modal-description").textContent = description;
+        document.getElementById("modal-link").href = link;
+
+        // Show Modal
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden"; // Prevent scroll
+
+        // GSAP Animation
+        gsap.to(modal, {
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out"
         });
 
-        // Project Cards Scroll Trigger
-        gsap.utils.toArray('.project-card').forEach((card, i) => {
-            gsap.to(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top bottom-=100",
-                    toggleActions: "play none none reverse"
-                },
-                y: 0,
-                opacity: 1,
-                duration: 0.8,
-                ease: "power3.out"
-            });
+        gsap.fromTo(".modal-content", 
+          { y: 50, opacity: 0, scale: 0.95 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: "power3.out", delay: 0.1 }
+        );
+
+        gsap.fromTo(".modal-backdrop",
+          { opacity: 0 },
+          { opacity: 1, duration: 0.5, ease: "linear" }
+        );
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("project-modal");
+
+        gsap.to(".modal-content", {
+          y: 20,
+          opacity: 0,
+          scale: 0.98,
+          duration: 0.4,
+          ease: "power2.in"
         });
 
-        // Marquee Effect
-        const marqueeContent = document.querySelector('.marquee-content');
-        const marqueeContainer = document.querySelector('.marquee-container');
-
-        // Clone content for seamless loop
-        const clone = marqueeContent.cloneNode(true);
-        marqueeContainer.appendChild(clone);
-
-        gsap.to('.marquee-content', {
-            xPercent: -100,
-            repeat: -1,
-            duration: 20,
-            ease: "linear"
+        gsap.to(modal, {
+          opacity: 0,
+          duration: 0.4,
+          ease: "power2.in",
+          onComplete: () => {
+            modal.classList.remove("active");
+            document.body.style.overflow = ""; // Re-enable scroll
+          }
         });
+      }
 
-        // Experience Items
-        gsap.utils.toArray('.experience-item').forEach((item, i) => {
-            gsap.from(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top bottom-=50",
-                },
-                x: -20,
-                opacity: 0,
-                duration: 0.6,
-                delay: i * 0.1
-            });
-        });
-
-        // Magnetic Buttons
-        const buttons = document.querySelectorAll('.magnetic-btn');
-
-        buttons.forEach(btn => {
-            btn.addEventListener('mousemove', (e) => {
-                const rect = btn.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-
-                gsap.to(btn, {
-                    x: x * 0.3,
-                    y: y * 0.3,
-                    duration: 0.3,
-                    ease: "power2.out"
-                });
-            });
-
-            btn.addEventListener('mouseleave', () => {
-                gsap.to(btn, {
-                    x: 0,
-                    y: 0,
-                    duration: 0.5,
-                    ease: "elastic.out(1, 0.3)"
-                });
-            });
-        });
+      // Close modal on escape key
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
     </script>
-</body>
-
+  </body>
 </html>
