@@ -234,100 +234,164 @@
           >
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Project 1 -->
+        <!-- Bento grid: VRIS tall featured left, CLASS + VERSA stacked right -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+          <!-- VRIS — tall featured card, spans both rows -->
           <div
             onclick="openModal(this)"
-            class="group relative block project-card opacity-0 translate-y-10 cursor-pointer"
+            class="group md:row-span-2 flex flex-col project-card opacity-0 translate-y-10 cursor-pointer"
             data-title="Vices Regulation Information System"
             data-image="assets/image/vris.png"
             data-tech="Laravel + Nuxt"
             data-description="An information management system for monitoring apprehended violators of the City of Davao's ordinances, including illegal public smoking and liquor ban violations, with features for tracking offenses and citation payments."
           >
-            <div
-              class="aspect-[4/3] overflow-hidden rounded-2xl bg-surface border border-black/5 relative shadow-sm"
-            >
-              <div
-                class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"
-              ></div>
+            <div class="flex-1 overflow-hidden rounded-2xl bg-surface border border-black/5 shadow-sm relative min-h-[280px]">
+              <div class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"></div>
               <img
                 src="assets/image/vris.png"
                 alt="VRIS"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
               />
-
-              <!-- Floating Badge -->
-              <div
-                class="absolute top-4 right-4 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full border border-black/10 z-20"
-              >
-                <span class="text-xs font-mono text-accent"
-                  >Laravel + Nuxt</span
-                >
+              <div class="absolute top-4 right-4 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full border border-black/10 z-20">
+                <span class="text-xs font-mono text-accent">Laravel + Nuxt</span>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/20 to-transparent z-20 pointer-events-none">
+                <span class="text-[11px] font-mono text-white/50 uppercase tracking-widest">Information System</span>
               </div>
             </div>
-            <div class="mt-6 flex justify-between items-start">
-              <div>
-                <h3
-                  class="font-heading font-bold text-2xl mb-1 group-hover:text-accent transition-colors"
-                >
-                  Vices Regulation Information System
-                </h3>
-              </div>
-              <div
-                class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-accent group-hover:text-void transition-all duration-300"
-              >
-                <i
-                  class="fas fa-eye -rotate-45 group-hover:rotate-0 transition-transform duration-300"
-                ></i>
+            <div class="mt-5 flex justify-between items-center">
+              <h3 class="font-heading font-bold text-2xl group-hover:text-accent transition-colors leading-snug">
+                Vices Regulation Information System
+              </h3>
+              <div class="w-10 h-10 shrink-0 ml-4 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-accent group-hover:text-void transition-all duration-300">
+                <i class="fas fa-eye -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
               </div>
             </div>
           </div>
 
-          <!-- Project 2 -->
+          <!-- CLASS — top right -->
           <div
             onclick="openModal(this)"
-            class="group relative block md:mt-24 project-card opacity-0 translate-y-10 cursor-pointer"
+            class="group project-card opacity-0 translate-y-10 cursor-pointer"
             data-title="Centralized Livestock and Management System"
             data-image="assets/image/class.png"
             data-tech="FilamentPHP"
             data-description="A centralized system for the City of Davao that streamlines and manages slaughterhouse client order of payment processing and payment transactions across multiple offices."
           >
-            <div
-              class="aspect-[4/3] overflow-hidden rounded-2xl bg-surface border border-black/5 relative shadow-sm"
-            >
-              <div
-                class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"
-              ></div>
+            <div class="aspect-[16/9] overflow-hidden rounded-2xl bg-surface border border-black/5 shadow-sm relative">
+              <div class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"></div>
               <img
                 src="assets/image/class.png"
-                alt="Livestock System"
+                alt="CLASS"
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
               />
-
-              <div
-                class="absolute top-4 right-4 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full border border-black/10 z-20"
-              >
+              <div class="absolute top-4 right-4 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full border border-black/10 z-20">
                 <span class="text-xs font-mono text-accent">FilamentPHP</span>
               </div>
             </div>
-            <div class="mt-6 flex justify-between items-start">
-              <div>
-                <h3
-                  class="font-heading font-bold text-2xl mb-1 group-hover:text-accent transition-colors"
-                >
-                  Centralized Livestock and Management System
-                </h3>
+            <div class="mt-5 flex justify-between items-center">
+              <h3 class="font-heading font-bold text-xl group-hover:text-accent transition-colors leading-snug">
+                Centralized Livestock and Management System
+              </h3>
+              <div class="w-9 h-9 shrink-0 ml-4 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-accent group-hover:text-void transition-all duration-300">
+                <i class="fas fa-eye -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-sm"></i>
               </div>
-              <div
-                class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-accent group-hover:text-void transition-all duration-300"
-              >
-                <i
-                  class="fas fa-eye -rotate-45 group-hover:rotate-0 transition-transform duration-300"
-                ></i>
+            </div>
+          </div>
+
+          <!-- VERSA — bottom right -->
+          <div
+            onclick="openModal(this)"
+            class="group project-card opacity-0 translate-y-10 cursor-pointer"
+            data-title="Versa — Venue &amp; Resource Scheduling"
+            data-image="assets/image/versa.png"
+            data-tech="Laravel + Vue.js"
+            data-description="A venue equipment and resource scheduling application for Almendras Gymnasium in Davao City. Enables seamless booking and reservation management for gym facilities, courts, and equipment — with real-time availability tracking, conflict detection, and admin controls for managing client requests and utilization reports."
+          >
+            <div class="aspect-[16/9] overflow-hidden rounded-2xl bg-surface border border-black/5 shadow-sm relative">
+              <div class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"></div>
+              <img
+                src="assets/image/versa.png"
+                alt="Versa"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+              />
+              <div class="absolute top-4 right-4 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full border border-black/10 z-20">
+                <span class="text-xs font-mono text-accent">Laravel + Vue.js</span>
+              </div>
+            </div>
+            <div class="mt-5 flex justify-between items-center">
+              <h3 class="font-heading font-bold text-xl group-hover:text-accent transition-colors leading-snug">
+                Versa — Venue &amp; Resource Scheduling
+              </h3>
+              <div class="w-9 h-9 shrink-0 ml-4 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-accent group-hover:text-void transition-all duration-300">
+                <i class="fas fa-eye -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-sm"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PayMeMaybe — Personal Project Spotlight -->
+        <div class="mt-6">
+          <div class="flex items-center gap-5 mb-6">
+            <span class="text-[11px] font-mono text-accent border border-accent/30 bg-accent/5 px-3 py-1 rounded-full shrink-0 tracking-widest uppercase">Personal Project</span>
+            <div class="h-px flex-1 bg-black/5"></div>
+          </div>
+
+          <div
+            onclick="openModal(this)"
+            class="group project-card opacity-0 translate-y-10 cursor-pointer"
+            data-title="PayMeMaybe"
+            data-image="assets/image/paymemaybe.png"
+            data-tech="Vue.js PWA + Web Push"
+            data-description="A progressive web app for tracking personal debts and IOUs. Add who owes you (or who you owe), set amounts and due dates, and let web push notifications do the awkward reminding for you. Installable on any device — no App Store required."
+          >
+            <div class="flex flex-col md:flex-row overflow-hidden rounded-2xl border border-black/5 bg-surface shadow-sm group-hover:shadow-md transition-shadow duration-500">
+              <!-- Image -->
+              <div class="w-full md:w-[42%] aspect-[4/3] md:aspect-auto min-h-[240px] overflow-hidden relative bg-gray-50">
+                <div class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"></div>
+                <img
+                  src="assets/image/paymemaybe.png"
+                  alt="PayMeMaybe"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                />
+                <div class="absolute top-4 right-4 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full border border-black/10 z-20">
+                  <span class="text-xs font-mono text-accent">PWA</span>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="w-full md:w-[58%] p-8 md:p-12 flex flex-col justify-center">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-xs font-mono text-muted">Side project</span>
+                  <div class="w-1 h-1 rounded-full bg-muted/30"></div>
+                  <span class="text-xs font-mono text-accent">Vue.js + Web Push</span>
+                </div>
+
+                <h3 class="font-heading font-bold text-4xl mb-4 group-hover:text-accent transition-colors">
+                  PayMeMaybe
+                </h3>
+
+                <p class="text-muted leading-relaxed mb-6">
+                  A PWA debt tracker that sends push notifications to remind people they owe you money — so you don't have to do the awkward ask yourself.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-7">
+                  <span class="text-xs font-mono px-3 py-1 rounded-full bg-black/5 text-muted">Web Push</span>
+                  <span class="text-xs font-mono px-3 py-1 rounded-full bg-black/5 text-muted">Installable PWA</span>
+                  <span class="text-xs font-mono px-3 py-1 rounded-full bg-black/5 text-muted">IOU Tracker</span>
+                </div>
+
+                <div class="flex items-center gap-3 font-heading font-bold uppercase tracking-wider text-sm text-accent">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -360,6 +424,10 @@
           <i class="devicon-nuxtjs-plain text-4xl text-accent"></i>
           <span class="text-4xl font-heading font-bold text-black/20">GIT</span>
           <i class="devicon-git-plain text-4xl text-accent"></i>
+          <span class="text-4xl font-heading font-bold text-black/20">NGINX</span>
+          <i class="devicon-nginx-original text-4xl text-accent"></i>
+          <span class="text-4xl font-heading font-bold text-black/20">LINUX</span>
+          <i class="devicon-linux-plain text-4xl text-accent"></i>
         </div>
       </div>
     </section>
@@ -433,7 +501,7 @@
               </div>
               <div class="p-4 bg-void rounded-lg border border-black/5">
                 <span class="block text-2xl font-bold text-[#0a0a0a] mb-1"
-                  >3</span
+                  >4</span
                 >
                 <span class="text-xs text-muted uppercase tracking-wider"
                   >Major Projects</span
